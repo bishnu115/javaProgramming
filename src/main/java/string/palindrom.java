@@ -12,14 +12,7 @@ public class palindrom {
 
     }
 
-    public static void palimdromusingforloop() {
-        String abc = "12321";
-        String rev = "";
-        for (int i = abc.length() - 1; i >= 0; i--) {
-            rev = rev + abc.charAt(i);
-        }
-        System.out.println(abc.equals(rev));
-    }
+
 
     public static boolean apnacollege() {
         String str = "a11ssa";
@@ -41,3 +34,20 @@ public class palindrom {
 
     }
 }
+// String input = "wwww";
+//
+//        boolean isPalindrome = true;
+//
+//        for (int i = 0; i < input.length() / 2; i++) {
+//            if (input.charAt(i) != input.charAt(input.length() - i - 1)) {
+//                isPalindrome = false;
+//                break;  // stop checking further
+//            }
+//        }
+//
+//        if (isPalindrome) {
+//            System.out.println("yes");
+//        } else {
+//            System.out.println("no");
+//        }
+//    }}

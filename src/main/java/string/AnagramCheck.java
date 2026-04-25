@@ -4,33 +4,27 @@ import java.util.Arrays;
 
 public class AnagramCheck {
     public static void main(String[] args) {
-        String str1 = "Listen";
-        String str2 = "Silent";
 
-        if (areAnagrams(str1, str2)) {
-            System.out.println("Anagrams");
-        } else {
-            System.out.println("Not Anagrams");
+            String s4 = "qwert";
+            String s5 = "qwert ";
+            String s1 = s4.toLowerCase().replaceAll("\\s", "");
+            String s2 = s5.toLowerCase().replaceAll("\\s", "");
+
+            if (s1.length() != s2.length()) {
+                System.out.println("noq");
+                return;
+            }
+
+            char[] bb = s2.toCharArray();
+            char[] aa = s1.toCharArray();
+            Arrays.sort(aa);
+            Arrays.sort(bb);
+            boolean result = Arrays.equals(aa, bb);
+            if (result) {
+                System.out.println("gf");
+
+            } else {
+                System.out.println("gtreg");
+            }
         }
     }
-
-    public static boolean areAnagrams(String s1, String s2) {
-        // Remove spaces and convert to lowercase
-        s1 = s1.replaceAll("\\s", "").toLowerCase();
-        s2 = s2.replaceAll("\\s", "").toLowerCase();
-
-        // Quick length check
-        if (s1.length() != s2.length()) {
-            return false;
-        }
-
-        // Convert to char array and sort
-        char[] arr1 = s1.toCharArray();
-        char[] arr2 = s2.toCharArray();
-        Arrays.sort(arr1);
-        Arrays.sort(arr2);
-
-        // Compare sorted arrays
-        return Arrays.equals(arr1, arr2);
-    }
-}

@@ -1,14 +1,17 @@
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.Collections;
 
 public class test {
 
     public static void main(String[] args) {
-        Integer[] asc ={2, 54, 3, 9, 2, 5};
-Arrays.sort(asc);
- //  Arrays.sort(asc, Collections.reverseOrder());
-        System.out.println("ascending: "+Arrays.toString(asc));
 
+       int[] arr={1,3,45,73,222,2};
+       int largestNO=arr[0];
+
+       for (int i=0;i< arr.length;i++){
+           if(arr[i]>largestNO){
+               largestNO=arr[i];
+           }
+       }
+        System.out.println(largestNO);
     }
+
 }
