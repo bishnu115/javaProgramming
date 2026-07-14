@@ -1,25 +1,26 @@
 package Array;
 
 import java.util.Arrays;
+import java.util.Collections;
 
-public class IA_rev_change1stlast
-{
+public class IA_rev_change1stlast {
 
     public static void main(String[] args) {
-        int[] aa = {4, 5, 6, 7};
 
-        // Step 1: Reverse and store into a new array
-        int[] reversed = new int[aa.length];
-        for (int i = 0; i < aa.length; i++) {
-            reversed[i] = aa[aa.length - 1 - i];
-        }
-        System.out.println("After reversing: " + Arrays.toString(reversed));
+// collection is work with integer not int bcz integer is object and collection work with object
+        Integer[] arr = {24, 24, 55, 78, 9, 999, 3};
 
-        // Step 2: Swap first and last of the reversed array
-        int temp = reversed[0];
-        reversed[0] = reversed[reversed.length - 1];
-        reversed[reversed.length - 1] = temp;
+        // Sort in descending order
+        Arrays.sort(arr, Collections.reverseOrder());
 
-        System.out.println("After swapping first & last: " + Arrays.toString(reversed));
+        System.out.println("Before Swap : " + Arrays.toString(arr));
+
+        // Swap first and last element
+        Integer temp = arr[0];
+        arr[0] = arr[arr.length - 1];
+        arr[arr.length - 1] = temp;
+
+        System.out.println("After Swap  : " + Arrays.toString(arr));
     }
+
 }

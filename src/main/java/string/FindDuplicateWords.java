@@ -5,24 +5,22 @@ import java.util.Map;
 
 public class FindDuplicateWords {
     public static void main(String[] args) {
-        String input = "Java is easy to learn and Java is powerful";
+        String s = "java is good and java is easy";
+        // Split sentence into words
+        String[] words = s.split("\\s+");
 
-        // Convert to lowercase and split into words
-        String[] words = input.toLowerCase().split("\\s+");
+        // Store word frequency
+        HashMap<String, Integer> map = new HashMap<>();
 
-        // Map to store word counts
-        Map<String, Integer> wordCount = new HashMap<>();
-
-        // Count each word
+        // Count frequency
         for (String word : words) {
-            wordCount.put(word, wordCount.getOrDefault(word, 0) + 1);
+            map.put(word, map.getOrDefault(word, 0) + 1);
         }
 
-        // Display duplicate words
-        System.out.println("Duplicate words:");
-        for (Map.Entry<String, Integer> entry : wordCount.entrySet()) {
-            if (entry.getValue() > 1) {
-                System.out.println(entry.getKey() + " → " + entry.getValue() + " times");
+        // Print duplicate words
+        for (String word : map.keySet()) {
+            if (map.get(word) > 1) {
+                System.out.println(word + " -> " + map.get(word));
             }
         }
     }

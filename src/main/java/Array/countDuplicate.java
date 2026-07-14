@@ -1,30 +1,33 @@
 package Array;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class countDuplicate {
+
+
     public static void main(String[] args) {
-        int[] aa = {4, 5, 6, 6, -7};
 
-        for (int i = 0; i < aa.length; i++) {
-            int count = 1; // start ith 1 for the current element
+        int[] arr = {1, 2, 3, 2, 4, 5, 1, 2};
 
-            // Count duplicates ahead
-            for (int j = i + 1; j < aa.length; j++) {
-                if (aa[i] == aa[j]) {
-                    count++;
-                }
-            }
+        HashMap<Integer, Integer> map = new HashMap<>();
 
-            // Print only if first occurrence
-            boolean alreadyPrinted = false;
-            for (int j = 0; j < i; j++) {
-                if (aa[i] == aa[j]) {
-                    alreadyPrinted = true;
-                    break;
-                }
-            }
-            if (!alreadyPrinted) {
-                System.out.println(aa[i] + " occurs " + count + " times");
-                // }
+        for (int num : arr) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+
+
+//        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+//            if (entry.getValue() > 1) {
+//                System.out.println(entry.getKey() + " occurs " + entry.getValue() + " times");
+//            }
+//        }
+
+        for (int q : map.keySet()) {
+            if (map.get(q) > 1) {
+                System.out.println(q + " -> " + map.get(q) + " times");
+
             }
         }
-    }}
+    }
+}

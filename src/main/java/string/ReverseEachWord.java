@@ -1,18 +1,33 @@
 package string;
 
 public class ReverseEachWord {
-    public static void main(String[] args) {
-        String input = "Java is easy";
-
-        String[] words = input.split("\\s+");
-        StringBuilder result = new StringBuilder();
-
-        for (String word : words) {
-            StringBuilder reversed = new StringBuilder(word);
-            result.append(reversed.reverse()).append(" ");
+    public static void loop() {
+        String str = "Java Selenium";
+        String[] words = str.split(" ");
+        for(String word : words) {
+            String rev = "";
+            for(int i = word.length()-1; i >= 0; i--) {
+                rev += word.charAt(i);
+            }
+            System.out.print(rev + " ");
         }
 
-        System.out.println("Reversed each word: " + result.toString().trim());
+    }
+        public static void usingStringbuilder(){
+            String s = "abc defg hi";
+            String[] word = s.split("\\s+");
+            for (String words: word) {
+                String rev = new StringBuilder(words).reverse().toString();
+                System.out.print(rev+" ");
+
+            }
+    }
+
+
+    public static void main(String[] args) {
+        usingStringbuilder();
+
+        loop();
     }
 }
 

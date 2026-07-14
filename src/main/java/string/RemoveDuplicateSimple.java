@@ -1,21 +1,25 @@
 package string;
 
+import java.util.HashSet;
+
 public class RemoveDuplicateSimple {
 
-        public static void main(String[] args) {
-            String input = "programming";
-            String result = "";
+    public static void main(String[] args) {
 
-            for (int i = 0; i < input.length(); i++) {
-                char ch = input.charAt(i);
-                if (result.indexOf(ch) == -1) {
-                    result = result + ch;
-                }
+        String s = "programming";
+
+        HashSet<Character> set = new HashSet<>();
+/*set create a new set{} which is empty then
+        it check after for loop "p" is present if not set.add(c) add p in that set like {p}
+        *\
+ */
+        for (char c : s.toCharArray()) {
+            if (!set.contains(c)) {
+                System.out.print(c);
+                set.add(c);
             }
-
-            System.out.println("Original: " + input);
-            System.out.println("Without duplicates: " + result);
         }
     }
+}
 
 

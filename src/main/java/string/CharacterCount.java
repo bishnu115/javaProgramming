@@ -4,16 +4,51 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CharacterCount {
-    //public class EasyCharCount {
     public static void main(String[] args) {
-        String input = "programming";
-        Map<Character, Integer> charCount = new HashMap<>();
 
-        for (char ch : input.toCharArray()) {
-            charCount.put(ch, charCount.getOrDefault(ch, 0) + 1);
+        // Input string
+        String s = "programming";
+        /*
+         HashMap is used to store:
+         Key   -> Character
+         Value -> Frequency count
+        */
+        HashMap<Character, Integer> map = new HashMap<>();
+        /*
+         toCharArray() converts string into character array
+         so we can iterate character by character
+        */
+        for (char c : s.toCharArray()) {
+            /*
+             getOrDefault(c,0)
+
+             - If character already exists:
+                   returns old count
+
+             - If character does not exist:
+                   returns 0
+
+             Then +1 increases frequency count
+            */
+            //map.put(key, value);
+            map.put(c, map.getOrDefault(c, 0) + 1);
         }
+        /*
+         keySet() returns all characters from HashMap
+        */
+        System.out.println("total : "+map);
 
-        System.out.println(charCount);
+        for (char c : map.keySet()) {
+
+            /*
+             If frequency > 1
+             then character is duplicate
+            */
+            if (map.get(c) > 1) {
+                System.out.println(c + " -> " + map.get(c));
+            }
+
+        }
     }
 }
 

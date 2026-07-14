@@ -4,6 +4,11 @@ import java.util.Arrays;
 
 public class MergeArrays {
     public static void main(String[] args) {
+        m1();
+        m2();
+    }
+
+    public static void m1() {
         int[] arr1 = {10, 20, 30};
         int[] arr2 = {40, 50, 60};
 
@@ -22,6 +27,17 @@ public class MergeArrays {
 
         // Print the merged array
         System.out.println("Merged array: " + Arrays.toString(merged));
+    }
+
+    public static void m2() {
+
+        int[] arr1 = {10, 20, 30};
+        int[] arr2 = {40, 50, 60};
+        int[] mrg = new int[arr1.length + arr2.length];
+
+        System.arraycopy(arr1, 0, mrg, 0, arr1.length);
+        System.arraycopy(arr2, 0, mrg, arr1.length, arr2.length);
+        System.out.println(Arrays.toString(mrg));
     }
 }
 

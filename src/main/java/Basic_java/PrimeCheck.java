@@ -4,31 +4,19 @@ import java.util.Scanner;
 
 public class PrimeCheck {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        int num = 17;
+        int count = 0;
 
-        System.out.print("Enter a number: ");
-        int num = scanner.nextInt();
+        for (int i = 1; i <= num; i++) {
 
-        boolean isPrime = true;
-
-        if (num <= 1) {
-            isPrime = false;
-        } else {
-            // Check divisibility from 2 to sqrt(num)
-            for (int i = 2; i <= Math.sqrt(num); i++) {
-                if (num % i == 0) {
-                    isPrime = false;
-                    break;
-                }
+            if (num % i == 0) {
+                count++;
             }
         }
 
-        if (isPrime) {
-            System.out.println(num + " is a Prime number.");
-        } else {
-            System.out.println(num + " is NOT a Prime number.");
-        }
-
-        scanner.close();
+        if (count == 2)
+            System.out.println("Prime Number");
+        else
+            System.out.println("Not Prime Number");
     }
 }
