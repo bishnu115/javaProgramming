@@ -5,22 +5,25 @@ public class palindrom {
     public static void palindromw() {
         String str = "12321";
         String rev = new StringBuilder(str).reverse().toString();
-      System.out.println(str.equals(rev));
-
-
+        System.out.println(str.equals(rev));
     }
-        public static boolean apnacollege() {
-        String str = "a11ssa";
-        for (int i = 0; i < str.length()/2; i++) {
-            if (str.charAt(i) != str.charAt(str.length()-i-1)){
-                return false;
 
-            }
+    public static void loop() {
+        String s1 = "asdsa";
+        String rev = "";
+        for (int i = s1.length() - 1; i >= 0; i--) {
+            rev = rev + s1.charAt(i);
         }
-    return true;
+        if (s1.equals(rev)) {
+            System.out.println("pal");
+        } else {
+            System.out.println("wefffe");
+        }
+
     }
+
     public static void main(String[] args) {
-         palindromw();
-        //System.out.println(apnacollege());
+        palindromw();
+        loop();
     }
 }

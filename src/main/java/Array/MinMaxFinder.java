@@ -34,7 +34,6 @@ public class MinMaxFinder {
                 max = num;
             }
         }
-
         System.out.println("Smallest element: " + min);
         System.out.println("Largest element: " + max);
     }

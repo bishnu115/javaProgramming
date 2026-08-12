@@ -2,37 +2,36 @@ package Array;
 
 public class ThirdLargestSimple {
     public static void main(String[] args) {
+        int[] arr = {10, 5, 20, 8, 15, 2};
 
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
 
-    int[] abc = {2, 0,47, 7, 8};
-    int max = abc[0];
-    int secondMax = abc[0];
-    int thirdMax= abc[0];
-        for (int i = 0; i < abc.length; i++) {
-        if (abc[i] > max) {
-            max = abc[i];
+        int smallest = Integer.MAX_VALUE;
+        int secondSmallest = Integer.MAX_VALUE;
 
-        }
-    }
-        System.out.println(max);
+        for (int num : arr) {
 
-        for (int i = 0; i < abc.length; i++) {
+            // Largest and second largest
+            if (num > largest) {
+                secondLargest = largest;
+                largest = num;
+            } else if (num > secondLargest && num != largest) {
+                secondLargest = num;
+            }
 
-        if (abc[i] != max && abc[i] > secondMax) {
-            secondMax = abc[i];
-        }
-
-    }
-        System.out.println(secondMax);
-
-
-        for (int i = 0; i < abc.length; i++) {
-        if (abc[i] != max && abc[i] != secondMax && abc[i] > thirdMax) {
-            thirdMax = abc[i];
+            // Smallest and second smallest
+            if (num < smallest) {
+                secondSmallest = smallest;
+                smallest = num;
+            } else if (num < secondSmallest && num != smallest) {
+                secondSmallest = num;
+            }
         }
 
+        System.out.println("Largest: " + largest);
+        System.out.println("Second Largest: " + secondLargest);
+        System.out.println("Smallest: " + smallest);
+        System.out.println("Second Smallest: " + secondSmallest);
     }
-        System.out.println(thirdMax);
-
-}
 }

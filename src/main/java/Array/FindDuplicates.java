@@ -7,22 +7,23 @@ import java.util.Set;
 
 public class FindDuplicates {
 
-    public static void m1(){
+    public static void m1() {
 
-        int[] arr={1,3,4,5,4,3,2};
+        int[] arr = {1, 3, 4, 5, 4, 3, 2};
 
-        Set<Integer>set=new HashSet<>();
-        Set<Integer>duplicate=new HashSet<>();
-        for(int num:arr){
-            if (!set.add(num)){
+        Set<Integer> set = new HashSet<>();
+        Set<Integer> duplicate = new HashSet<>();
+        for (int num : arr) {
+            if (!set.add(num)) {
                 duplicate.add(num);
             }
         }
-        System.out.println("duplicate: "+duplicate);
+        System.out.println("duplicate: " + duplicate);
     }
+
     public static void m2() {
 
-        int[] arr={1,3,4,5,4,3,2};
+        int[] arr = {1, 3, 4, 5, 4, 3, 2};
 
         HashMap<Integer, Integer> map = new HashMap<>();
 
@@ -41,10 +42,11 @@ public class FindDuplicates {
             }
         }
     }
+
     public static void main(String[] args) {
 
         m1();
-m2();
+        m2();
     }
 }
 

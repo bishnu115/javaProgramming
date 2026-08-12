@@ -1,27 +1,23 @@
 package Array;
 
-import java.util.Arrays;
-import java.util.Collections;
+import java.security.spec.RSAOtherPrimeInfo;
+import java.util.*;
 
 public class test {
     public static void main(String[] args) {
-        int[] arr = {4, 5, 6, 6, 7};
-boolean shot=true;
-        for (int i = 0; i < arr.length-1; i++) {
-            if (arr[i] > arr[i + 1]) {
-                shot=false;
-               break;
-            }
-
-
-
-        }
-        if (shot){
-            System.out.println("ok");
-        }
-        else {
-            System.out.println("not ok");
-        }
-
+        int[] arr = {10, 5, 20, -8, 15};
+        int lar=Integer.MIN_VALUE;
+        int sec=Integer.MIN_VALUE;
+      for (int num:arr){
+          if((num>lar)) {
+              lar=num;
+          }else{
+              if (num>sec && num!=lar){
+                sec=num;
+              }
+          }
+      }
+        System.out.println(lar);
+        System.out.println(sec);
     }
-}
+    }
