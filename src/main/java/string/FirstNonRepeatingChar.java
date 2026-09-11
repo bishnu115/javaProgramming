@@ -20,14 +20,22 @@ public class FirstNonRepeatingChar {
                     System.out.println("First Non-Repeating Character: " + c);
                    break;
                 }
+                /*// the order of a normal HashMap is not guaranteed
+                 for (char c : s.toCharArray()) {
+                if (map.get(c) == 1) {
+                    System.out.println("First Non-Repeating Character: " + c);
+                   break;
+                }
+
+                 */
 
                 // Traverse from right to left
-                for (int i = s.length() - 1; i >= 0; i--) {
-                    if (map.get(s.charAt(i)) == 1) {
-                        System.out.println("Last non-repeated character: " + s.charAt(i));
-                        return;
-                    }
-                }
+//                for (int i = s.length() - 1; i >= 0; i--) {
+//                    if (map.get(s.charAt(i)) == 1) {
+//                        System.out.println("Last non-repeated character: " + s.charAt(i));
+//                        return;
+//                    }
+//                }
             }
         }
     }

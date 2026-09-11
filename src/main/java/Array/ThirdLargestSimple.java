@@ -3,35 +3,23 @@ package Array;
 public class ThirdLargestSimple {
     public static void main(String[] args) {
         int[] arr = {10, 5, 20, 8, 15, 2};
+        int max= Integer.MIN_VALUE;
+        int smax= Integer.MIN_VALUE;
+        int tmax= Integer.MIN_VALUE;
 
-        int largest = Integer.MIN_VALUE;
-        int secondLargest = Integer.MIN_VALUE;
-
-        int smallest = Integer.MAX_VALUE;
-        int secondSmallest = Integer.MAX_VALUE;
-
-        for (int num : arr) {
-
-            // Largest and second largest
-            if (num > largest) {
-                secondLargest = largest;
-                largest = num;
-            } else if (num > secondLargest && num != largest) {
-                secondLargest = num;
+        for(int num:arr){
+            if(num>max){
+                smax=max;
+                max=num;
+            }else if(num>smax){
+                tmax=smax;
+                smax=num;
             }
-
-            // Smallest and second smallest
-            if (num < smallest) {
-                secondSmallest = smallest;
-                smallest = num;
-            } else if (num < secondSmallest && num != smallest) {
-                secondSmallest = num;
+            else if(num>tmax){
+                tmax=num;
             }
         }
 
-        System.out.println("Largest: " + largest);
-        System.out.println("Second Largest: " + secondLargest);
-        System.out.println("Smallest: " + smallest);
-        System.out.println("Second Smallest: " + secondSmallest);
+        System.out.println(tmax);
     }
 }

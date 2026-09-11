@@ -1,25 +1,40 @@
 package string;
 
 import java.util.HashSet;
+import java.util.Set;
 
 public class RemoveDuplicateSimple {
 
     public static void main(String[] args) {
+        uniqueCharacter();
+        System.out.println();
+        DuplicateCharacter();
+    }
 
-        String s = "programming";
-
+    public static void uniqueCharacter() {
+        String s = "programmmmmming";
         HashSet<Character> set = new HashSet<>();
-/*set create a new set{} which is empty then
-        it check after for loop "p" is present if not set.add(c) add p in that set like {p}
-        *\
- */
         for (char c : s.toCharArray()) {
-            if (!set.contains(c)) {
+            if (set.add(c)) {
                 System.out.print(c);
-                set.add(c);
             }
         }
     }
+
+    public static void DuplicateCharacter() {
+        String s = "programmmmmming";
+        HashSet<Character> set = new HashSet<>();
+        HashSet<Character> du = new HashSet<>();
+        for (char c : s.toCharArray()) {
+            if (!set.add(c)) {
+                du.add(c);
+            }
+        }
+        System.out.println(du);
+    }
+
 }
+
+
 
 

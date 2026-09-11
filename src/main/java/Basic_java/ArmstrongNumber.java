@@ -4,26 +4,28 @@ import java.util.Scanner;
 
 public class ArmstrongNumber {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter a number: ");
-        int num = scanner.nextInt();
+
+         /*1³ + 5³ + 3³
+         = 1 + 125 + 27
+         = 153
+        */
+
+        int num = 153;
         int original = num;
-        int result = 0;
+        int sum = 0;
 
-        while (num != 0) {
+        while (num > 0) {
             int digit = num % 10;
-            result += Math.pow(digit, 3);  // For 3-digit numbers, use power 3
-            num /= 10;
+            sum = sum + (digit * digit * digit);
+            num = num / 10;
         }
 
-        if (result == original) {
-            System.out.println(original + " is an Armstrong number.");
+        if (sum == original) {
+            System.out.println("Armstrong Number");
         } else {
-            System.out.println(original + " is NOT an Armstrong number.");
+            System.out.println("Not an Armstrong Number");
         }
-
-        scanner.close();
     }
 }
 

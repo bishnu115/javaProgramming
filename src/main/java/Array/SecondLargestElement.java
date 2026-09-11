@@ -12,20 +12,19 @@ public class SecondLargestElement {
     }
 
     public static void m1() {
-        int[] arr = {10, 5, 20, 8, 15};
-        int largest = Integer.MIN_VALUE;
-        int secondLargest = Integer.MIN_VALUE;
+        int[] arr = {18, 2, 3, 5};
 
+        int max = arr[0];
+        int smax = Integer.MIN_VALUE;
         for (int num : arr) {
-            if (num > largest) {
-                secondLargest = largest;
-                largest = num;
-            } else if (num > secondLargest && num != largest) {
-                secondLargest = num;
+            if (num > max) {
+                smax = max;
+                max = num;
+            } else if (num > smax) {
+                smax = num;
             }
         }
-        System.out.println("Largest: " + largest);
-        System.out.println("Second Largest: " + secondLargest);
+        System.out.println(smax);
     }
 
 

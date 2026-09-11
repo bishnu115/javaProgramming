@@ -1,23 +1,27 @@
 package Array;
 
+import java.security.SignedObject;
 import java.security.spec.RSAOtherPrimeInfo;
 import java.util.*;
 
 public class test {
     public static void main(String[] args) {
-        int[] arr = {10, 5, 20, -8, 15};
-        int lar=Integer.MIN_VALUE;
-        int sec=Integer.MIN_VALUE;
-      for (int num:arr){
-          if((num>lar)) {
-              lar=num;
-          }else{
-              if (num>sec && num!=lar){
-                sec=num;
-              }
-          }
-      }
-        System.out.println(lar);
-        System.out.println(sec);
+        int[] arr = {133, 23, 3, 2, -4, 2023, 1, 2};
+        int max = Integer.MIN_VALUE;
+        int smax = Integer.MIN_VALUE;
+        for (int num : arr) {
+            if (num > max) {
+                smax = num;
+                max = num;
+            } else if (num > smax) {
+                smax = num;
+
+            }
+        }
+
+        System.out.println(smax);
     }
-    }
+
+}
+
+
