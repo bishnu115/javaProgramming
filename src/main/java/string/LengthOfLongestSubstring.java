@@ -12,9 +12,9 @@ import java.util.HashSet;
         for (int right = 0; right < s.length(); right++) {
             // Remove duplicates
             /*
-            initialy while loop is false so all character add in set.add when
+            initially while loop is false so all character add in set.add when
             it found duplicate while loop is true and it enter while loop and
-            remove the left one and increse the left by 1
+            remove the left one and increase the left by 1
              */
             while (set.contains(s.charAt(right))) {
                 set.remove(s.charAt(left));

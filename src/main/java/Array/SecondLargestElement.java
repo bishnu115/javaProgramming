@@ -14,7 +14,7 @@ public class SecondLargestElement {
     public static void m1() {
         int[] arr = {18, 2, 3, 5};
 
-        int max = arr[0];
+        int max = Integer.MIN_VALUE;
         int smax = Integer.MIN_VALUE;
         for (int num : arr) {
             if (num > max) {

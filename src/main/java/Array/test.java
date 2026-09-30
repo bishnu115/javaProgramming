@@ -6,22 +6,20 @@ import java.util.*;
 
 public class test {
     public static void main(String[] args) {
-        int[] arr = {133, 23, 3, 2, -4, 2023, 1, 2};
-        int max = Integer.MIN_VALUE;
-        int smax = Integer.MIN_VALUE;
-        for (int num : arr) {
-            if (num > max) {
-                smax = num;
-                max = num;
-            } else if (num > smax) {
-                smax = num;
 
-            }
-        }
 
-        System.out.println(smax);
+        List<Integer> list = Arrays.asList(50, 20, 40, 10, 30);
+        Collections.sort(list);
+Collections.sort(list,Collections.reverseOrder());
+int max=Collections.max(list);
+        int min=Collections.min(list);
+
+        System.out.println(list);
+        System.out.println(max);
+        System.out.println(min);
     }
 
 }
+
 
 

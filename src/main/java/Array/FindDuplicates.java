@@ -7,9 +7,9 @@ import java.util.Set;
 
 public class FindDuplicates {
 
-    public static void m1() {
+    public static void m1(int[] arr) {
 
-        int[] arr = {1, 3, 4, 5, 4, 3, 2};
+//        int[] arr = {1, 3, 4, 5, 4, 3, 2};
 
         Set<Integer> set = new HashSet<>();
         Set<Integer> duplicate = new HashSet<>();
@@ -23,7 +23,7 @@ public class FindDuplicates {
 
 
     public static void main(String[] args) {
-        m1();
+        m1(new int[]{8, 6, 987, 897, 8,8976});
     }
 }
 
