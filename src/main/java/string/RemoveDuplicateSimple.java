@@ -22,7 +22,7 @@ public class RemoveDuplicateSimple {
     }
 
     public static void DuplicateCharacter() {
-        String s = "programmmmmming";
+        String s = "aaccbbw";
         HashSet<Character> set = new HashSet<>();
         HashSet<Character> du = new HashSet<>();
         for (char c : s.toCharArray()) {
@@ -30,7 +30,7 @@ public class RemoveDuplicateSimple {
                 du.add(c);
             }
         }
-        System.out.println(du);
+        System.out.println("du"+du);
     }
 
 }

@@ -4,7 +4,7 @@ import java.util.HashSet;
     public class LengthOfLongestSubstring {
 
     public static void main(String[] args) {
-        String s = "abcabcbb";
+        String s = "abcdabcbb";
         // Hashset Store unique characters
         HashSet<Character> set = new HashSet<>();
         int left = 0;

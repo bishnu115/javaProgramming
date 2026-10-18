@@ -23,8 +23,39 @@ public class palindrom {
         }
 
 
-
     }
+//Reverse a string while preserving the original positions of spaces.
+    public static void m(){
+        String s = "ab c de";
+        char[] ch = s.toCharArray();
+//left starts at the beginning.
+//
+//right starts at the end.
+        int left = 0;
+        int right = ch.length - 1;
+
+        while (left < right) {
+//: Check whether the left character is a space
+            //If it is a space, skip it without changing its position.
+            if (ch[left] == ' ') {
+                left++;
+             //   Check whether the right character is a space
+             //If it is a space, move the right pointer backward.
+            } else if (ch[right] == ' ') {
+                right--;
+            } else {
+                char temp = ch[left];
+                ch[left] = ch[right];
+                ch[right] = temp;
+
+                left++;
+                right--;
+            }
+        }
+
+        System.out.println(new String(ch));
+    }
+
 
     public static void main(String[] args) {
       //  palindromw();

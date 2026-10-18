@@ -15,8 +15,9 @@ public class PrimeCheck {
         }
 
         if (count == 2)
-            System.out.println("Prime Number");
-        else
+          //  System.out.println("Prime Number");
+        System.out.println(count);
+        else{
             System.out.println("Not Prime Number");
-    }
+    }}
 }

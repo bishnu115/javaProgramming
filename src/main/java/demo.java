@@ -3,19 +3,30 @@ import java.util.*;
 public class demo {
 
     public static void main(String[] args) {
-        String s = "iiiiiii er  erer ooooooo";
-        String[] sp = s.split("\\s+");
-        String lo = "";
-        for (String r : sp) {
-            if (r.length() > lo.length()) {
-                lo = r;
+
+        String s = "programmmming";
+
+        HashMap<Character, Integer> map = new HashMap<>();
+
+        for (char c : s.toCharArray()) {
+
+            map.put(c, map.getOrDefault(c, 0) + 1);
+        }
+        int max = 0;
+        char maxchar = ' ';
+        for (char c : map.keySet()) {
+
+            if (map.get(c) > max) {
+                max = map.get(c);
+                maxchar = c;
             }
         }
-        System.out.println(lo);
-
+        System.out.println(max + " times " + maxchar);
     }
 
 }
+
+
 
 
 

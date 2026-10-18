@@ -6,20 +6,19 @@ import java.util.*;
 
 public class test {
     public static void main(String[] args) {
-
-
-        List<Integer> list = Arrays.asList(50, 20, 40, 10, 30);
-        Collections.sort(list);
-Collections.sort(list,Collections.reverseOrder());
-int max=Collections.max(list);
-        int min=Collections.min(list);
-
-        System.out.println(list);
-        System.out.println(max);
-        System.out.println(min);
+        int a = 16;
+        int co = 0;
+        for (int i = 1; i <= a; i++) {
+            if (a % i == 0) {
+                co++;
+            }
+        }
+        System.out.println(co);
     }
 
 }
+
+
 
 
 

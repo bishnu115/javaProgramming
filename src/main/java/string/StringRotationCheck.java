@@ -2,25 +2,17 @@ package string;
 
 public class StringRotationCheck {
     public static void main(String[] args) {
-        String str1 = "abcd";
-        String str2 = "cdab";
 
-        if (isRotation(str1, str2)) {
-            System.out.println("String is a rotation");
-        } else {
-            System.out.println("String is NOT a rotation");
+                String str1 = "ABCD";
+                String str2 = "CDAB";
+
+                if (str1.length() == str2.length()
+                        && (str1 + str1).contains(str2)) {
+     
+
+                    System.out.println("Strings are rotations");
+                } else {
+                    System.out.println("Strings are not rotations");
+                }
+            }
         }
-    }
-
-    public static boolean isRotation(String s1, String s2) {
-        // Quick length check
-        if (s1.length() != s2.length()) {
-            return false;
-        }
-
-        // Combine s1 with itself and check if s2 is a substring
-        String combined = s1 + s1;
-        return combined.contains(s2);
-    }
-}
-
